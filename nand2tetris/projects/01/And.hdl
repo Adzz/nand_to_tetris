@@ -7,6 +7,20 @@
  * And gate: 
  * out = 1 if (a == 1 and b == 1)
  *       0 otherwise
+
+ X | Y | AND
+ 1 | 0 |  0
+ 0 | 0 |  0
+ 1 | 1 |  1
+ 0 | 1 |  0
+
+ X | Y | NOTAND
+ 1 | 0 |  1     | 0
+ 0 | 0 |  1
+ 1 | 1 |  0
+ 0 | 1 |  1
+
+
  */
 
 CHIP And {
@@ -14,5 +28,8 @@ CHIP And {
     OUT out;
 
     PARTS:
-    // Put your code here:
+      Nand(a=a, b=b, out=nandos);
+      Not(in=nandos, out=out);
 }
+
+

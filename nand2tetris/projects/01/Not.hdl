@@ -6,12 +6,20 @@
 /**
  * Not gate:
  * out = not in
- */
+
+
+X | Y | Not And
+1 | 0 | 1
+0 | 0 | 1
+1 | 1 | 0
+0 | 1 | 1
+
+*/
 
 CHIP Not {
     IN in;
     OUT out;
 
     PARTS:
-    // Put your code here:
+      Nand(a=in, b=in, out=out);
 }

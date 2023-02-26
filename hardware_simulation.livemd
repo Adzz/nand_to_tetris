@@ -1,0 +1,63 @@
+# Boolean Logic Simulator
+
+## Section
+
+This is some code to maybe help try and answer the exercises in chapter 1.
+
+The situation there is we want to be able to quickly experiment with different transformations and see how those transformations affect the bits we get out of the Gates. So for example I want to be able to start with some combination of X and Y values and figure out "what happens if I NAND these bits for every value of X and Y?".
+
+```elixir
+#   defmodule Sim do
+#     def not(0), do: 1
+#     def not(1), do: 0
+
+#     def nand(0, 0), do: 1
+#     def nand(0, 1), do: 1
+#     def nand(1, 0), do: 1
+#     def nand(1, 1), do: 0
+
+#     def aand(0, 0), do: 0
+#     def aand(0, 1), do: 0
+#     def aand(1, 0), do: 0
+#     def aand(1, 1), do: 1
+
+#     def orr(0, 0), do: 0
+#     def orr(0, 1), do: 1
+#     def orr(1, 0), do: 1
+#     def orr(1, 1), do: 1
+#   end
+
+# Sim.nand(Sim.not(0), Sim.not(0))
+# Sim.nand(Sim.not(1), Sim.not(1))
+# Sim.nand(Sim.not(1), Sim.not(0))
+# Sim.nand(Sim.not(0), Sim.not(1))
+
+# [
+#   [0, 0],
+#   [0, 1],
+#   [1, 0],
+#   [1, 1],
+# ]
+# simulation = [
+#   {:nand, :not, :is},
+# ]
+
+# Sim.run(rows, simulation)
+
+# Sim.nand(:not, :is)
+
+defmodule Eamples do
+  def thing([]) do
+  end
+
+  def thing(false) do
+    case Thing.thing() do
+      {:ok, learm} -> "l"
+      {:error, :not_found} -> fnjf
+      {:error, :bar} -> 111
+    end
+  end
+end
+
+Eamples.thing(true)
+```
