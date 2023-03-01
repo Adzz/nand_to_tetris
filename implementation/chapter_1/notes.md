@@ -59,8 +59,6 @@ X  | Y | f1 | f2| f3| f4| f5| f6| f7| f8| f9|f10|f11|f12|f13|f14|f15|f16|
 
 x * !y + !x + y
 
-
-
 Each function is one possible combination of row outputs.
 
 Because we have 2 possible values (`1` or `0`) the number of possible rows is 2^N where N is the number of variables. In our case we have x and y so that's 2^2 == 4 rows.
@@ -116,8 +114,6 @@ f13             |
 f14             |
 f15             |
 f16             |
-
-
 
 
 
