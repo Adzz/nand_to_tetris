@@ -26,12 +26,18 @@ What is the boolean function that produces this answer for each row? We can figu
 
 ## The Canonical Representation
 
-The canonical representation is just the simplest function that describes the boolean operations needed to get the correct output for the given row. We get it like this:
+The canonical representation is just the simplest function that describes the boolean operations needed to get the correct output for the given row. There are two ways to get it, Sum Of Minterm or Product Of Maxterm.
+
+### Sum Of Minterm
+
+We get it like this:
 
 1. Select all rows for which f(x, y) is `1`
 2. Let `0` mean `!variable` and `1` mean `variable`
 3. AND together all literals created from the row.
 4. OR together all of the statements created from steps 1-3.
+
+5. Simplify??
 
 So for row 1 we would use `x AND not(y)`, or in the usual notation `x · !y`*** This is the only row that returns a 1 for `f(x, y)` so we only use this row.
 
@@ -47,6 +53,10 @@ Row 3: 1 * !1 = 1 * 0 = 0
 Row 4: 0 * !0 = 0 * 1 = 0
 
 If we go back to the `f(x, y)` what we did is make up an output for each row. That output can essentially be a 1 or 0 and it's the combination of _all_ rows that tells us what the function actually is. That means we could figure out every possible boolean function for two variables by enumerating all possibilities. Let's imagine every possible combination of output for all rows for X and Y.
+
+### Sum of Maxterm
+
+https://www.geeksforgeeks.org/canonical-and-standard-form/?ref=lbp
 
 It would look something like this:
 
