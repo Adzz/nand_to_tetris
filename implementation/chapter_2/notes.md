@@ -36,6 +36,16 @@ Strikes me that the CARRY is and AND ? and the SUM is what... "x * not(y) + not(
 This takes in three inputs and still only produces two outputs - the SUM and CARRY.
 
 
+Full adder is like two half adders. But the added wrinkle is that we need to know what to do with the CARY.
+
+Essentially you can half add A and B. Then take the sum to
+
+
+
+
+
+
+
 
 
 
