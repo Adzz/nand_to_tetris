@@ -31,4 +31,11 @@ A | B | CARYY | SUM |
 
 Strikes me that the CARRY is and AND ? and the SUM is what... "x * not(y) + not(x) * y + not(x) * not(y)" which I think is an exclusive OR. We should have documented better.
 
+# Full Adder
+
+This takes in three inputs and still only produces two outputs - the SUM and CARRY.
+
+
+
+
 
