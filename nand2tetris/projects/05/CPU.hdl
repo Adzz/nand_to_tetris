@@ -40,4 +40,24 @@ CHIP CPU {
 
     PARTS:
     // Put your code here:
+    Mux16(a=instruction, b=aluOut, sel=instruction[15], out=aRegIn);
+
+    Not(in=instruction[15], out=isAInstruction);
+    And(a=instruction[15], b=instruction[5], out=CInstWritesToAReg);
+    Or(a=isAInstruction, b=CInstWritesToAReg, out=shouldWriteAReg);
+
+    // A register
+    Register(in=aRegIn, load=shouldWriteAReg, out=aReg);
+
+      // TODO: sel may be wrong in some cases. A instruction case??
+      Mux16(a=aReg, b=inM, sel=instruction[12], out=AluX);
+      // D register  d2
+
+      And(a=instruction[15], b=instruction[4], out=CInstWritesToDReg);
+
+    Register(in=aluOut, load=CInstWritesToDReg, out=AluY);
+
+    ALU(x=AluX, y=AluY, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], zr=ignore, ng=ignored, out=aluOut, out=outM);
+    // load == jumps!! or something. Very close.
+    PC(reset=reset, in=aReg, inc=true, load=, out=);
 }
